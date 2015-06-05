@@ -30,8 +30,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="navigationBar" destination="YeQ-DI-dFr" id="hg9-h4-Tlw"/>
-                        <segue destination="kdm-eb-iwG" kind="show" id="yvm-H3-MvM"/>
-                        <segue destination="LKg-0N-DKa" kind="presentation" id="Naz-iI-YBR"/>
+                        <segue destination="kdm-eb-iwG" kind="show" identifier="toDetailTaskVC" id="yvm-H3-MvM"/>
+                        <segue destination="LKg-0N-DKa" kind="presentation" identifier="toAddTaskVC" id="Naz-iI-YBR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cla-7U-Sau" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -124,7 +124,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="atq-mb-Qza" kind="show" id="zmF-qE-OoY"/>
+                        <segue destination="atq-mb-Qza" kind="show" identifier="toEditTaskVC" id="zmF-qE-OoY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5G-Bf-eit" userLabel="First Responder" sceneMemberID="firstResponder"/>
