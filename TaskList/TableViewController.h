@@ -10,4 +10,6 @@
 
 @interface TableViewController : UITableViewController
 
+@property (strong, nonatomic) IBOutlet UINavigationItem *navigationBar;
+
 @end
