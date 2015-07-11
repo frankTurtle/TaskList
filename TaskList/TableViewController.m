@@ -7,6 +7,7 @@
 //
 
 #import "TableViewController.h"
+#import "Defines.h"
 
 @interface TableViewController ()
 
@@ -14,14 +15,17 @@
 
 @implementation TableViewController
 
+// Method to return an NSMutableArray for our taskObjects object
+-(NSMutableArray *)taskObjects
+{
+    if (!_taskObjects)
+        _taskObjects = [NSMutableArray new];
+    
+    return _taskObjects;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,7 +34,6 @@
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
@@ -87,19 +90,69 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ( [segue.destinationViewController isKindOfClass:[AddTaskViewController class]] ) // ............... if the destination is to AddTaskVC
+    {
+        AddTaskViewController *destinationVC = segue.destinationViewController; //......................... create new instance of AddTaskVC
+        destinationVC.delegate = self; //.................................................................. set the delegate
+    }
 }
-*/
 
-- (IBAction)plusButton:(UIBarButtonItem *)sender {
+
+#pragma mark - Helper Methods
+// Method to return a dictionary of the Task Objects properties
+// uses the defines as keys
+-(NSDictionary *)taskObjectAsAProperty:(Task *)taskObject
+{
+    NSDictionary *rtnDict = @{ TITLE :       taskObject.title,
+                               DESCRIPTION : taskObject.description,
+                               DATE :        taskObject.date,
+                               COMPLETION :  @(taskObject.isCompleted)
+                               };
+    
+    return rtnDict;
 }
 
-- (IBAction)reorderButton:(UIBarButtonItem *)sender {
+#pragma mark - Delegate Methods
+// Method to handle when the cancel button is pressed
+// dismisses current view controller
+-(void)didCancel
+{
+    [self dismissViewControllerAnimated:YES completion:nil]; //.......... dismisses current VC
+}
+
+// Method to handle when you add a new task
+-(void)didAddTask:(Task *)task
+{
+    [self.taskObjects addObject:task]; //.................................................................................................................................. adds the task to the array
+    
+    NSMutableArray *copiedNSUserDefaults = [ [NSMutableArray alloc]initWithArray:[[[NSUserDefaults standardUserDefaults] arrayForKey:TASK_OBJECT_KEY] mutableCopy] ]; //... copies array from NSUserDefaults
+    
+    [copiedNSUserDefaults addObject:[self taskObjectAsAProperty:task]]; //................................................................................................. adds a dictionary to the array copied from the NSUSerDefaults
+    
+    [[NSUserDefaults standardUserDefaults] setObject:copiedNSUserDefaults forKey:TASK_OBJECT_KEY]; //...................................................................... adds the array to NSUSerDefaults
+    [[NSUserDefaults standardUserDefaults] synchronize]; //................................................................................................................ persists the data
+    
+    [self dismissViewControllerAnimated:YES completion:nil]; //............................................................................................................ dismiss the current VC
+    
+    [self.tableView reloadData]; //........................................................................................................................................ reloads data for tableView
+    
+}
+
+#pragma mark - Button Actions
+// Method to segue to AddTaskVC once button is pressed
+- (IBAction)plusButton:(UIBarButtonItem *)sender
+{
+    [self performSegueWithIdentifier:@"toAddTaskVC" sender:self];
+}
+
+- (IBAction)reorderButton:(UIBarButtonItem *)sender
+{
+    
 }
 @end

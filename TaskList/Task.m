@@ -27,7 +27,7 @@
     if (self) //....................................................... if initializer worked
     {
         self.title = data[TITLE]; //................................... set the title
-        self.description = data[DESCRIPTION]; //....................... set description
+        self.descript = data[DESCRIPTION]; //.......................... set description
         self.date = data[DATE]; //..................................... set the date
         self.isCompleted = [data[COMPLETION] boolValue]; //............ set if completed
     }

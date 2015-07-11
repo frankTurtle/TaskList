@@ -39,7 +39,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="navigationBar" destination="YeQ-DI-dFr" id="hg9-h4-Tlw"/>
                         <segue destination="kdm-eb-iwG" kind="show" identifier="toDetailTaskVC" id="yvm-H3-MvM"/>
                         <segue destination="LKg-0N-DKa" kind="presentation" identifier="toAddTaskVC" id="Naz-iI-YBR"/>
                     </connections>
@@ -329,23 +328,31 @@
                                     <action selector="cancelButton:" destination="LKg-0N-DKa" eventType="touchUpInside" id="bDo-YP-WOD"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Task Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xhf-1K-bcQ">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4gB-La-EHg">
                                 <rect key="frame" x="-160" y="-81" width="320" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="455225140.85255402">
                                     <!--2015-06-05 19:25:40 +0000-->
                                 </date>
                             </datePicker>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Text View" translatesAutoresizingMaskIntoConstraints="NO" id="Tor-0o-zOM">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Task Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xhf-1K-bcQ">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="L49-r0-f8T" firstAttribute="leading" secondItem="jHm-GK-BGW" secondAttribute="leading" constant="10" id="EF4-NZ-xKo"/>
                             <constraint firstAttribute="trailing" secondItem="0Ws-N1-lrK" secondAttribute="trailing" constant="10" id="HRe-kd-G5f"/>
-                            <constraint firstItem="xhf-1K-bcQ" firstAttribute="top" secondItem="xMc-B9-WfI" secondAttribute="bottom" constant="217" id="Ild-Rh-Phy"/>
+                            <constraint firstItem="xhf-1K-bcQ" firstAttribute="top" secondItem="xMc-B9-WfI" secondAttribute="bottom" constant="217" id="Ild-Rh-Phy">
+                                <variation key="heightClass=regular-widthClass=compact" constant="131"/>
+                            </constraint>
                             <constraint firstAttribute="trailing" secondItem="4gB-La-EHg" secondAttribute="trailing" id="LsE-XI-Co7"/>
                             <constraint firstItem="0Ws-N1-lrK" firstAttribute="top" secondItem="4gB-La-EHg" secondAttribute="bottom" constant="92" id="OPH-CO-nXE"/>
                             <constraint firstItem="L49-r0-f8T" firstAttribute="top" secondItem="4gB-La-EHg" secondAttribute="bottom" constant="92" id="Pvy-sR-Rxh"/>
@@ -354,53 +361,68 @@
                             <constraint firstAttribute="trailing" secondItem="xhf-1K-bcQ" secondAttribute="trailing" constant="20" id="as9-iH-T8K"/>
                             <constraint firstAttribute="centerY" secondItem="4gB-La-EHg" secondAttribute="centerY" id="dth-dg-Iou"/>
                             <constraint firstAttribute="centerX" secondItem="4gB-La-EHg" secondAttribute="centerX" id="eED-AI-fxY"/>
+                            <constraint firstAttribute="trailing" secondItem="Tor-0o-zOM" secondAttribute="trailing" id="h8w-om-vaH"/>
+                            <constraint firstItem="Tor-0o-zOM" firstAttribute="leading" secondItem="jHm-GK-BGW" secondAttribute="leading" id="iAb-3h-I6t"/>
+                            <constraint firstItem="Tor-0o-zOM" firstAttribute="top" secondItem="xhf-1K-bcQ" secondAttribute="bottom" constant="10" id="iqN-Cc-n68"/>
+                            <constraint firstItem="4gB-La-EHg" firstAttribute="top" secondItem="Tor-0o-zOM" secondAttribute="bottom" constant="10" id="uD1-oV-Sdj"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="L49-r0-f8T"/>
                                 <exclude reference="0Ws-N1-lrK"/>
-                                <exclude reference="xhf-1K-bcQ"/>
                                 <exclude reference="4gB-La-EHg"/>
+                                <exclude reference="Tor-0o-zOM"/>
+                                <exclude reference="xhf-1K-bcQ"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Ild-Rh-Phy"/>
                                 <exclude reference="a8F-Zt-soo"/>
                                 <exclude reference="as9-iH-T8K"/>
-                                <exclude reference="HRe-kd-G5f"/>
-                                <exclude reference="OPH-CO-nXE"/>
-                                <exclude reference="EF4-NZ-xKo"/>
-                                <exclude reference="Pvy-sR-Rxh"/>
+                                <exclude reference="h8w-om-vaH"/>
+                                <exclude reference="iAb-3h-I6t"/>
+                                <exclude reference="iqN-Cc-n68"/>
                                 <exclude reference="LsE-XI-Co7"/>
                                 <exclude reference="V3U-Ss-tjo"/>
                                 <exclude reference="dth-dg-Iou"/>
                                 <exclude reference="eED-AI-fxY"/>
+                                <exclude reference="uD1-oV-Sdj"/>
+                                <exclude reference="EF4-NZ-xKo"/>
+                                <exclude reference="Pvy-sR-Rxh"/>
+                                <exclude reference="HRe-kd-G5f"/>
+                                <exclude reference="OPH-CO-nXE"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="L49-r0-f8T"/>
                                 <include reference="0Ws-N1-lrK"/>
-                                <include reference="xhf-1K-bcQ"/>
                                 <include reference="4gB-La-EHg"/>
+                                <include reference="Tor-0o-zOM"/>
+                                <include reference="xhf-1K-bcQ"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Ild-Rh-Phy"/>
                                 <include reference="a8F-Zt-soo"/>
                                 <include reference="as9-iH-T8K"/>
-                                <include reference="HRe-kd-G5f"/>
-                                <include reference="OPH-CO-nXE"/>
-                                <include reference="EF4-NZ-xKo"/>
-                                <include reference="Pvy-sR-Rxh"/>
+                                <include reference="h8w-om-vaH"/>
+                                <include reference="iAb-3h-I6t"/>
+                                <include reference="iqN-Cc-n68"/>
                                 <include reference="LsE-XI-Co7"/>
                                 <include reference="V3U-Ss-tjo"/>
                                 <include reference="dth-dg-Iou"/>
                                 <include reference="eED-AI-fxY"/>
+                                <include reference="uD1-oV-Sdj"/>
+                                <include reference="EF4-NZ-xKo"/>
+                                <include reference="Pvy-sR-Rxh"/>
+                                <include reference="HRe-kd-G5f"/>
+                                <include reference="OPH-CO-nXE"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="datePicker" destination="4gB-La-EHg" id="D9I-tR-Mg8"/>
                         <outlet property="taskNameTextField" destination="xhf-1K-bcQ" id="Hz9-QM-PcV"/>
+                        <outlet property="taskView" destination="Tor-0o-zOM" id="HPj-2J-l8F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BMT-JV-Y5v" userLabel="First Responder" sceneMemberID="firstResponder"/>

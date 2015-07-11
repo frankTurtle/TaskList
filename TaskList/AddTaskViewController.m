@@ -7,6 +7,7 @@
 //
 
 #import "AddTaskViewController.h"
+#import "Task.h"
 
 @interface AddTaskViewController ()
 
@@ -34,9 +35,30 @@
 }
 */
 
-- (IBAction)addButton:(UIButton *)sender {
+- (IBAction)addButton:(UIButton *)sender
+{
+    [self.delegate didAddTask:[self getTask]]; //...... call method declared in protocol
+    
 }
 
-- (IBAction)cancelButton:(UIButton *)sender {
+- (IBAction)cancelButton:(UIButton *)sender
+{
+    [self.delegate didCancel]; //.......... call method declared in protocol
 }
+
+#pragma mark - Helper method
+// Method to get the task based on the current info entered in the outlets
+// default completion status is NO
+-(Task *)getTask
+{
+    Task *rtnTask = [Task new]; //................... new Task
+    
+    rtnTask.title = self.taskNameTextField.text; //.. sets the title
+    rtnTask.descript = self.taskView.text; //........ sets the description
+    rtnTask.date = self.datePicker.date; //.......... gets the due date
+    rtnTask.isCompleted = NO; //..................... sets its completion to NO
+    
+    return rtnTask;
+}
+
 @end

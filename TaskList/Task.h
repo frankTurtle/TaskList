@@ -11,7 +11,7 @@
 @interface Task : NSObject
 
 @property (strong,nonatomic) NSString *title; //.......... holds the title
-@property (strong,nonatomic) NSString *description; //.... holds the description of the task
+@property (strong,nonatomic) NSString *descript; //.... holds the description of the task
 @property (strong,nonatomic) NSDate *date; //............. holds the task due date
 @property (assign,nonatomic) BOOL isCompleted; //......... holds whether its done
 

@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddTaskViewController.h"
 
-@interface TableViewController : UITableViewController
+@interface TableViewController : UITableViewController <AddTaskViewControllerDelegate>
 
-@property (strong, nonatomic) IBOutlet UINavigationItem *navigationBar;
+#pragma mark - Properties
+@property (strong,nonatomic) NSMutableArray *taskObjects; //................. holds all the tasks
 
+#pragma mark - Actions
 - (IBAction)plusButton:(UIBarButtonItem *)sender;
 - (IBAction)reorderButton:(UIBarButtonItem *)sender;
 
