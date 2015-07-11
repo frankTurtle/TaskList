@@ -17,6 +17,8 @@
 		1085C3D41B222898008F4B82 /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1085C3D31B222898008F4B82 /* AddTaskViewController.m */; };
 		1085C3D71B2228CA008F4B82 /* DetailTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1085C3D61B2228CA008F4B82 /* DetailTaskViewController.m */; };
 		1085C3DA1B2228F9008F4B82 /* EditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1085C3D91B2228F9008F4B82 /* EditTaskViewController.m */; };
+		10EB185E1B519AFD00A891F0 /* Defines.m in Sources */ = {isa = PBXBuildFile; fileRef = 10EB185D1B519AFD00A891F0 /* Defines.m */; };
+		10EB18611B519B7400A891F0 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 10EB18601B519B7400A891F0 /* Task.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,10 @@
 		1085C3D61B2228CA008F4B82 /* DetailTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTaskViewController.m; sourceTree = "<group>"; };
 		1085C3D81B2228F9008F4B82 /* EditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTaskViewController.h; sourceTree = "<group>"; };
 		1085C3D91B2228F9008F4B82 /* EditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTaskViewController.m; sourceTree = "<group>"; };
+		10EB185C1B519AFD00A891F0 /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
+		10EB185D1B519AFD00A891F0 /* Defines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Defines.m; sourceTree = "<group>"; };
+		10EB185F1B519B7400A891F0 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		10EB18601B519B7400A891F0 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +145,10 @@
 		1085C3CD1B222748008F4B82 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				10EB185C1B519AFD00A891F0 /* Defines.h */,
+				10EB185D1B519AFD00A891F0 /* Defines.m */,
+				10EB185F1B519B7400A891F0 /* Task.h */,
+				10EB18601B519B7400A891F0 /* Task.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -262,8 +272,10 @@
 				1085C3D41B222898008F4B82 /* AddTaskViewController.m in Sources */,
 				1085C3D11B2227ED008F4B82 /* TableViewController.m in Sources */,
 				1085C3DA1B2228F9008F4B82 /* EditTaskViewController.m in Sources */,
+				10EB18611B519B7400A891F0 /* Task.m in Sources */,
 				1085C3A91B222660008F4B82 /* main.m in Sources */,
 				1085C3D71B2228CA008F4B82 /* DetailTaskViewController.m in Sources */,
+				10EB185E1B519AFD00A891F0 /* Defines.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
