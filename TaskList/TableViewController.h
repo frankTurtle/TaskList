@@ -12,4 +12,6 @@
 
 @property (strong, nonatomic) IBOutlet UINavigationItem *navigationBar;
 
+- (IBAction)plusButton:(UIBarButtonItem *)sender;
+- (IBAction)reorderButton:(UIBarButtonItem *)sender;
 @end

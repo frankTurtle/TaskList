@@ -10,4 +10,10 @@
 
 @interface AddTaskViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *taskNameTextField;
+@property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
+
+- (IBAction)addButton:(UIButton *)sender;
+- (IBAction)cancelButton:(UIButton *)sender;
+
 @end

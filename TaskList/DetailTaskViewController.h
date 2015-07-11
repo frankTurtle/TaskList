@@ -10,4 +10,10 @@
 
 @interface DetailTaskViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UILabel *label1;
+@property (strong, nonatomic) IBOutlet UILabel *label2;
+@property (strong, nonatomic) IBOutlet UILabel *label3;
+
+
+- (IBAction)editButton:(UIBarButtonItem *)sender;
 @end

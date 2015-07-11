@@ -34,4 +34,9 @@
 }
 */
 
+- (IBAction)addButton:(UIButton *)sender {
+}
+
+- (IBAction)cancelButton:(UIButton *)sender {
+}
 @end
